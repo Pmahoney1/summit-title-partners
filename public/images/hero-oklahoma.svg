@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2744"/>
+      <stop offset="55%" stop-color="#3d4f6e"/>
+      <stop offset="100%" stop-color="#8b7355"/>
+    </linearGradient>
+    <linearGradient id="sunGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4a265" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#c4a265" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="horizon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4a265"/>
+      <stop offset="100%" stop-color="#a08050"/>
+    </linearGradient>
+    <linearGradient id="plain1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b6e45"/>
+      <stop offset="100%" stop-color="#6b5d4e"/>
+    </linearGradient>
+    <linearGradient id="plain2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b5d4e"/>
+      <stop offset="100%" stop-color="#4a3f33"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3f33"/>
+      <stop offset="100%" stop-color="#3a3028"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="62%" cy="52%" r="18%">
+      <stop offset="0%" stop-color="#faf7f2" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#c4a265" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#c4a265" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- Sun glow corona -->
+  <ellipse cx="990" cy="468" rx="380" ry="260" fill="url(#sun)"/>
+
+  <!-- Thin golden horizon band -->
+  <rect x="0" y="455" width="1600" height="28" fill="url(#horizon)" opacity="0.85"/>
+
+  <!-- Far rolling hill — wide gentle curve -->
+  <path d="M0 490 Q200 470 400 478 Q650 490 800 475 Q950 462 1100 472 Q1300 484 1600 470 L1600 900 L0 900 Z" fill="url(#plain1)" opacity="0.9"/>
+
+  <!-- Mid plains band -->
+  <path d="M0 560 Q180 545 380 552 Q600 560 820 548 Q1040 538 1260 550 Q1430 558 1600 545 L1600 900 L0 900 Z" fill="url(#plain2)"/>
+
+  <!-- Foreground ground -->
+  <path d="M0 660 Q280 648 560 655 Q840 662 1120 650 Q1360 640 1600 650 L1600 900 L0 900 Z" fill="url(#ground)"/>
+
+  <!-- Subtle horizontal light streaks in sky -->
+  <rect x="0" y="380" width="1600" height="3" fill="#c4a265" opacity="0.12"/>
+  <rect x="0" y="408" width="1600" height="2" fill="#c4a265" opacity="0.08"/>
+  <rect x="0" y="430" width="1600" height="2" fill="#faf7f2" opacity="0.06"/>
+
+  <!-- Very subtle grain overlay via thin lines -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#sunGlow)" opacity="0.3"/>
+
+  <!-- Barely-visible grass texture on foreground -->
+  <path d="M0 658 Q80 654 160 658 Q240 662 320 657 Q400 652 480 658" stroke="#3a3028" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M600 648 Q700 644 800 649 Q900 654 1000 648 Q1100 643 1200 649" stroke="#3a3028" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M1250 652 Q1380 648 1500 653 Q1560 655 1600 652" stroke="#3a3028" stroke-width="1.5" fill="none" opacity="0.4"/>
+</svg>

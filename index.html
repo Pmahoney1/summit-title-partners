@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Summit Title Partners — Curative Title Solutions for California Homeowners</title>
+  <meta name="description" content="Summit Title Partners specializes in curative title solutions, messy title resolution, and foreclosure navigation for California homeowners. Free consultation, response within 24 hours." />
+  <meta name="keywords" content="curative title, messy title, foreclosure help, title solutions, California title company, title clearing, lien resolution, probate title" />
+  <meta property="og:title" content="Summit Title Partners — Curative Title Solutions" />
+  <meta property="og:description" content="We help California homeowners navigate complex title issues — from foreclosures to messy titles. Free consultation, response in under 24 hours." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.summittitlepartners.com" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.summittitlepartners.com" />
+
+  <!-- Fonts: Zodiak (display) + Work Sans (body) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=work-sans@300,400,500,600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <!-- Splitting.js for animated text -->
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Summit Title Partners",
+    "description": "Curative title solutions, messy title resolution, and foreclosure navigation for California homeowners.",
+    "url": "https://www.summittitlepartners.com",
+    "areaServed": {
+      "@type": "State",
+      "name": "California"
+    },
+    "serviceType": ["Curative Title", "Foreclosure Navigation", "Title Resolution"],
+    "priceRange": "Free Consultation",
+    "openingHours": "Mo-Fr 08:00-18:00"
+  }
+  </script>
+</head>
+<body>
+
+<!-- Hidden SVG filters -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="overlay" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ======================== NAVIGATION ======================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <!-- Logo placeholder -->
+    <a href="#" class="nav__logo" aria-label="Summit Title Partners home">
+      <img src="assets/images/logo-dark-blue.png" alt="Summit Title Partners" class="nav__logo-img" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav__cta">Free Consultation</a>
+    </nav>
+
+    <!-- Theme toggle + hamburger -->
+    <div class="nav__controls">
+      <button data-theme-toggle class="icon-btn" aria-label="Switch to dark mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav>
+      <a href="#services" class="mobile-menu__link">Services</a>
+      <a href="#process" class="mobile-menu__link">Process</a>
+      <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#contact" class="mobile-menu__link mobile-menu__cta">Free Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero" id="home">
+  <div class="hero__bg">
+    <img src="assets/images/hero-mountain.png" alt="California mountain summit at golden hour" class="hero__img" />
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__eyebrow fade-in-up">Summit Title Partners</div>
+    <h1 class="hero__headline" data-splitting>
+      Clearing the Path<br>to Clear Title
+    </h1>
+    <p class="hero__sub fade-in-up">
+      We specialize in resolving complex title issues — from tax-delinquent estates
+      to probate gaps and multi-lien disputes. Where others see obstacles,
+      we see solutions.
+    </p>
+    <div class="hero__actions fade-in-up">
+      <a href="#contact" class="btn btn--primary">Free Consultation</a>
+      <a href="#services" class="btn btn--ghost">How We Help</a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll">
+    <div class="hero__scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ======================== TRUST BAR ======================== -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-bar__items">
+      <div class="trust-bar__item">
+        <span class="trust-bar__num">24 Hrs</span>
+        <span class="trust-bar__label">Response Time</span>
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__item">
+        <span class="trust-bar__num">Free</span>
+        <span class="trust-bar__label">Consultation</span>
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__item">
+        <span class="trust-bar__num">6 Years</span>
+        <span class="trust-bar__label">Experience</span>
+      </div>
+      <div class="trust-bar__divider"></div>
+      <div class="trust-bar__item">
+        <span class="trust-bar__num">California</span>
+        <span class="trust-bar__label">Statewide Coverage</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SERVICES ======================== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">We Solve What Others Can't</h2>
+      <p class="section-desc">
+        Complex title issues require specialized expertise. We bring clarity
+        to the most tangled ownership situations in California.
+      </p>
+    </div>
+
+    <div class="services__grid">
+
+      <div class="service-card fade-in">
+        <div class="service-card__icon">
+          <i data-lucide="scroll"></i>
+        </div>
+        <h3 class="service-card__title">Curative Title</h3>
+        <p class="service-card__desc">
+          We clear clouds on title — tax liens, missing heirs, recording errors,
+          and chain-of-title breaks that prevent you from selling, refinancing,
+          or using your property.
+        </p>
+        <ul class="service-card__list">
+          <li><i data-lucide="check"></i> Tax lien analysis &amp; redemption</li>
+          <li><i data-lucide="check"></i> Chain of title correction</li>
+          <li><i data-lucide="check"></i> Recording error resolution</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-card__icon">
+          <i data-lucide="home"></i>
+        </div>
+        <h3 class="service-card__title">Foreclosure Navigation</h3>
+        <p class="service-card__desc">
+          If you're behind on payments or received a notice, we help you
+          understand your options, protect your rights, and find the best
+          path forward for your family.
+        </p>
+        <ul class="service-card__list">
+          <li><i data-lucide="check"></i> Foreclosure prevention strategies</li>
+          <li><i data-lucide="check"></i> Rights protection &amp; advocacy</li>
+          <li><i data-lucide="check"></i> Reinstatement &amp; modification help</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-card__icon">
+          <i data-lucide="file-text"></i>
+        </div>
+        <h3 class="service-card__title">Probate &amp; Estate Title</h3>
+        <p class="service-card__desc">
+          When a property owner passes without proper probate, title becomes trapped.
+          We work through heirship affidavits, intestate succession, and court proceedings
+          to free the asset and establish clear ownership.
+        </p>
+        <ul class="service-card__list">
+          <li><i data-lucide="check"></i> Heirship affidavit preparation</li>
+          <li><i data-lucide="check"></i> Intestate succession research</li>
+          <li><i data-lucide="check"></i> Probate court coordination</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-card__icon">
+          <i data-lucide="scale"></i>
+        </div>
+        <h3 class="service-card__title">Litigation &amp; Lien Resolution</h3>
+        <p class="service-card__desc">
+          Properties caught in lawsuits or burdened by multiple competing liens require specialized
+          expertise. We untangle competing claims, negotiate settlements, and coordinate legal
+          remedies to produce a clean chain of title.
+        </p>
+        <ul class="service-card__list">
+          <li><i data-lucide="check"></i> Multi-lien priority analysis</li>
+          <li><i data-lucide="check"></i> Quiet title action coordination</li>
+          <li><i data-lucide="check"></i> Judgment lien negotiation</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-card__icon">
+          <i data-lucide="search"></i>
+        </div>
+        <h3 class="service-card__title">Title Search &amp; Opinion</h3>
+        <p class="service-card__desc">
+          A thorough title search is the foundation of every transaction. Our team conducts
+          deep-dive chain of title research and delivers comprehensive opinions that reveal
+          every cloud — before it becomes a crisis.
+        </p>
+        <ul class="service-card__list">
+          <li><i data-lucide="check"></i> Full chain of title research</li>
+          <li><i data-lucide="check"></i> Cloud identification</li>
+          <li><i data-lucide="check"></i> Attorney opinion letters</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-card__icon">
+          <i data-lucide="search-check"></i>
+        </div>
+        <h3 class="service-card__title">Messy Title Solutions</h3>
+        <p class="service-card__desc">
+          Probate gaps, competing liens, boundary disputes — the more tangled
+          the situation, the more you need a specialist. We untangle the mess
+          and deliver clean, insurable title.
+        </p>
+        <ul class="service-card__list">
+          <li><i data-lucide="check"></i> Ownership history reports</li>
+          <li><i data-lucide="check"></i> Encumbrance &amp; lien discovery</li>
+          <li><i data-lucide="check"></i> Boundary &amp; easement resolution</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FULL-BLEED IMAGE DIVIDER ======================== -->
+<section class="image-divider">
+  <img src="assets/images/documents-clarity.png" alt="Property deed documents on navy leather desk" class="image-divider__img" />
+  <div class="image-divider__overlay">
+    <blockquote class="image-divider__quote">
+      "A clouded title is not a dead end — it's an invitation to solve."
+    </blockquote>
+  </div>
+</section>
+
+<!-- ======================== PROCESS ======================== -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process__layout">
+      <div class="process__left">
+        <div class="section-label">How We Work</div>
+        <h2 class="section-title">Our Curative<br>Process</h2>
+        <p class="section-desc">
+          Every title problem has a solution. We follow a disciplined,
+          methodical process refined across hundreds of complex resolutions.
+        </p>
+        <div class="process__image-wrap">
+          <img src="assets/images/mountain-path.png" alt="Mountain trail leading to summit" class="process__image" />
+        </div>
+      </div>
+
+      <div class="process__steps">
+        <div class="process__step fade-in">
+          <div class="process__step-num">01</div>
+          <div class="process__step-content">
+            <h3>Discovery &amp; Title Search</h3>
+            <p>We begin with a comprehensive search — county records, court filings, tax rolls, and probate indices — to map every cloud on title and identify all parties with potential interest.</p>
+          </div>
+        </div>
+        <div class="process__step fade-in">
+          <div class="process__step-num">02</div>
+          <div class="process__step-content">
+            <h3>Risk Assessment</h3>
+            <p>We analyze each defect, assess legal risk, and determine the most efficient curative strategy. Some clouds resolve quickly; others require litigation. We map the full picture before committing.</p>
+          </div>
+        </div>
+        <div class="process__step fade-in">
+          <div class="process__step-num">03</div>
+          <div class="process__step-content">
+            <h3>Curative Action</h3>
+            <p>From heirship affidavits and quiet title actions to lien negotiations and tax redemptions, our team executes the resolution strategy with precision — working alongside your legal team or independently.</p>
+          </div>
+        </div>
+        <div class="process__step fade-in">
+          <div class="process__step-num">04</div>
+          <div class="process__step-content">
+            <h3>Clear Title &amp; Close</h3>
+            <p>Once the clouds are removed, we coordinate final title review, underwriter approval, and a clean closing — delivering a fully insurable, marketable property ready for its next chapter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ABOUT ======================== -->
+<section class="about" id="about">
+  <div class="about__bark-bg">
+    <img src="assets/images/mountain-rock.png" alt="" aria-hidden="true" class="about__bark-img" />
+    <div class="about__bark-overlay"></div>
+  </div>
+  <div class="container">
+    <div class="about__content">
+      <div class="section-label section-label--light">Who We Are</div>
+      <h2 class="section-title section-title--light">Built on Strength.<br>Standing at the Summit.</h2>
+      <div class="about__body">
+        <p>
+          Summit Title Partners was founded on a simple premise: the most challenging title problems
+          are also the most valuable to solve. We are a specialized curative title group
+          that operates where traditional title companies cannot or will not go.
+        </p>
+        <p>
+          Like the mountain summit — steadfast, enduring, and above the clouds — we rise above
+          the complexity. Our team brings years of combined experience in real estate law, title examination,
+          estate planning, and distressed property resolution to bear on every case we accept.
+        </p>
+        <p>
+          We don't just process titles. We engineer solutions. Whether you're facing foreclosure,
+          dealing with an inherited property, or tangled in liens — we bring clarity where there
+          was confusion, and we close.
+        </p>
+      </div>
+      <a href="#contact" class="btn btn--light">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== WHY US ======================== -->
+<section class="why-us">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Why Summit</div>
+      <h2 class="section-title">The Standard Others<br>Don't Meet</h2>
+    </div>
+    <div class="why-us__grid">
+      <div class="why-card fade-in">
+        <div class="why-card__icon"><i data-lucide="clock"></i></div>
+        <h3>Under 24-Hour Response</h3>
+        <p>Your situation won't wait and neither will we. Every inquiry gets a response within one business day — because delays cost you money and peace of mind.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-card__icon"><i data-lucide="handshake"></i></div>
+        <h3>Free Consultation</h3>
+        <p>No upfront cost, no obligation. We'll review your situation, explain your options in plain English, and give you an honest assessment before you commit to anything.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-card__icon"><i data-lucide="layers"></i></div>
+        <h3>End-to-End Capability</h3>
+        <p>From initial title search through curative action, underwriter negotiation, and closing — we handle the full stack, so nothing falls through the gaps.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-card__icon"><i data-lucide="map-pin"></i></div>
+        <h3>All of California</h3>
+        <p>We serve homeowners in every county across California. No matter where your property is, we know the local records, the county processes, and the path to clear title.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== REVIEWS ======================== -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-title">What Homeowners Are Saying</h2>
+    </div>
+    <div class="reviews__grid">
+      <div class="review-card fade-in">
+        <div class="review-card__stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-card__text">
+          "I thought I was going to lose my home to foreclosure. Summit stepped in, explained
+          everything in plain English, and helped me find a solution I didn't even know existed.
+          I can't thank them enough."
+        </p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">MR</div>
+          <div>
+            <div class="review-card__name">Maria R.</div>
+            <div class="review-card__loc">Sacramento, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-card__stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-card__text">
+          "My mother passed and the title was a nightmare — multiple heirs, no probate, county liens.
+          Summit handled everything and got us clear title in under 90 days. Professional and compassionate."
+        </p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">JT</div>
+          <div>
+            <div class="review-card__name">James T.</div>
+            <div class="review-card__loc">Los Angeles, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-card__stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="review-card__text">
+          "They responded the same day I reached out and walked me through every step. I felt like they
+          genuinely cared about my situation, not just collecting a fee. Highly recommend Summit Title Partners."
+        </p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">DL</div>
+          <div>
+            <div class="review-card__name">David L.</div>
+            <div class="review-card__loc">Fresno, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CONTACT ======================== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__layout">
+      <div class="contact__left">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's Clear Your Title</h2>
+        <p class="section-desc">
+          Tell us about your title situation — no matter how complex.
+          We'll review and respond within one business day.
+        </p>
+        <div class="contact__info">
+          <div class="contact__info-item">
+            <i data-lucide="mail"></i>
+            <a href="mailto:info@summittitlepartners.com">info@summittitlepartners.com</a>
+          </div>
+          <div class="contact__info-item">
+            <i data-lucide="map-pin"></i>
+            <span>Serving all of California</span>
+          </div>
+          <div class="contact__info-item">
+            <i data-lucide="clock"></i>
+            <span>Response within 24 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+        </div>
+        <div class="form-group address-group">
+          <label for="address">Property Address</label>
+          <input type="text" id="address" name="address" placeholder="Start typing an address..." required autocomplete="off" />
+          <div class="address-suggestions" id="addressSuggestions"></div>
+        </div>
+        <div class="form-group">
+          <label for="message">Describe Your Situation</label>
+          <textarea id="message" name="message" rows="4" placeholder="Briefly describe the property and the title issue you're facing..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">
+          <span class="btn__text">Send Message</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          <i data-lucide="check-circle"></i>
+          <span>Thank you — we'll be in touch within one business day.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__layout">
+      <div class="footer__brand">
+        <a href="#" class="footer__logo" aria-label="Summit Title Partners">
+          <img src="assets/images/logo-gold.png" alt="Summit Title Partners" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">Clearing the path to clear title.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__col">
+          <span class="footer__col-heading">Services</span>
+          <a href="#services">Curative Title</a>
+          <a href="#services">Foreclosure Help</a>
+          <a href="#services">Lien Resolution</a>
+          <a href="#services">Title Search</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-heading">Company</span>
+          <a href="#about">About Us</a>
+          <a href="#process">Our Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; 2026 Summit Title Partners. All rights reserved.</span>
+      <span class="footer__legal">This website is for informational purposes only and does not constitute legal advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
