@@ -1,7 +1,7 @@
 /* ============================================================
    SUMMIT TITLE PARTNERS — main.js
    Handles: dark mode, nav scroll, mobile menu, tagline reveal,
-   scroll animations, contact form (POST to form.action),
+   scroll animations, lead forms (POST to form.action),
    GA4 events (generate_lead, phone_click), icons
    ============================================================ */
 
@@ -123,18 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
-/* ---- CONTACT FORM ----
-   POSTs JSON to form.action. Success is shown only after a 2xx
-   response; anything else shows the error state. */
+/* ---- LEAD FORMS ----
+   Every form that posts to /api/lead (homepage contact form, service
+   page sidebar + closing forms). POSTs JSON to form.action. Success is
+   shown only after a 2xx response; anything else shows the error state. */
 (function () {
-  const form    = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  const error   = document.getElementById('formError');
-  if (!form || !success || !error) return;
-
-  const btn     = form.querySelector('button[type="submit"]');
-  const btnText = btn.querySelector('.btn__text');
-  const idleLabel = btnText.textContent;
+  const forms = document.querySelectorAll('form[action="/api/lead"]');
+  if (!forms.length) return;
 
   function markInvalid(field) {
     field.style.borderColor = '#c0392b';
@@ -142,52 +137,61 @@ document.addEventListener('DOMContentLoaded', () => {
     field.addEventListener('change', () => { field.style.borderColor = ''; }, { once: true });
   }
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    success.classList.remove('visible');
-    error.classList.remove('visible');
+  forms.forEach(form => {
+    const success = form.querySelector('.form-success');
+    const error   = form.querySelector('.form-error');
+    const btn     = form.querySelector('button[type="submit"]');
+    if (!success || !error || !btn) return;
+    const btnText = btn.querySelector('.btn__text');
+    const idleLabel = btnText.textContent;
 
-    let isValid = true;
-    let firstInvalid = null;
-    form.querySelectorAll('[required]').forEach(field => {
-      const empty = !field.value || !String(field.value).trim();
-      const badEmail = field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
-      if (empty || badEmail) {
-        isValid = false;
-        markInvalid(field);
-        if (!firstInvalid) firstInvalid = field;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      success.classList.remove('visible');
+      error.classList.remove('visible');
+
+      let isValid = true;
+      let firstInvalid = null;
+      form.querySelectorAll('[required]').forEach(field => {
+        const empty = !field.value || !String(field.value).trim();
+        const badEmail = field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+        if (empty || badEmail) {
+          isValid = false;
+          markInvalid(field);
+          if (!firstInvalid) firstInvalid = field;
+        }
+      });
+      if (!isValid) { firstInvalid && firstInvalid.focus(); return; }
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.page = window.location.href;
+
+      btn.disabled = true;
+      btnText.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(form.getAttribute('action'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+
+        form.reset();
+        success.classList.add('visible');
+        stpTrack('generate_lead', {
+          situation: data.situation || '',
+          county: data.county || '',
+          form_id: form.id
+        });
+      } catch (err) {
+        error.classList.add('visible');
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = idleLabel;
+        if (window.lucide) window.lucide.createIcons();
       }
     });
-    if (!isValid) { firstInvalid && firstInvalid.focus(); return; }
-
-    const data = Object.fromEntries(new FormData(form).entries());
-    data.page = window.location.href;
-
-    btn.disabled = true;
-    btnText.textContent = 'Sending…';
-
-    try {
-      const res = await fetch(form.getAttribute('action'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-
-      form.reset();
-      success.classList.add('visible');
-      stpTrack('generate_lead', {
-        situation: data.situation || '',
-        county: data.county || '',
-        form_id: form.id
-      });
-    } catch (err) {
-      error.classList.add('visible');
-    } finally {
-      btn.disabled = false;
-      btnText.textContent = idleLabel;
-      if (window.lucide) window.lucide.createIcons();
-    }
   });
 })();
 
