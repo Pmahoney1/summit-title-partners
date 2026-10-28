@@ -3,51 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Summit Title Partners — Where Complex Property Situations Find Solutions</title>
-  <meta name="description" content="Summit Title Partners helps California homeowners facing delinquent taxes, liens, foreclosure, inherited property, and title problems. We understand your situation first, then explain your realistic options. Free consultation, response within 24 hours." />
-  <meta name="keywords" content="complex property situations, delinquent property taxes, foreclosure options, inherited property, probate property, title problems, lien resolution, curative title, California homeowners" />
-  <meta property="og:title" content="Summit Title Partners — Where Complex Property Situations Find Solutions" />
-  <meta property="og:description" content="We help California homeowners facing delinquent taxes, liens, foreclosure, inherited property, and title problems understand their options before making a decision. Free consultation, response in under 24 hours." />
+  <title>Delinquent Property Tax, Lien &amp; Title Problem Help in California | Summit Title Partners</title>
+  <meta name="description" content="Behind on property taxes, inherited a house, or stuck with liens or title problems in California? We explain every real option. Free consultation." />
+  <meta property="og:title" content="Delinquent Property Tax, Lien &amp; Title Problem Help in California | Summit Title Partners" />
+  <meta property="og:description" content="Behind on property taxes, inherited a house, or stuck with liens or title problems in California? We explain every real option. Free consultation." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.summittitlepartners.com" />
+  <meta property="og:url" content="https://www.summittitlepartners.com/" />
+  <meta property="og:image" content="https://www.summittitlepartners.com/assets/images/hero-mountain-1920.webp" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.summittitlepartners.com" />
+  <link rel="canonical" href="https://www.summittitlepartners.com/" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
 
-  <!-- Fonts: Zodiak (display) + Work Sans (body) -->
+  <!-- SITE CONFIG PLACEHOLDERS (replace before merge): GA4_MEASUREMENT_ID = G-XXXXXXXXXX, GSC_VERIFICATION_TOKEN = GSC_VERIFICATION_TOKEN -->
+  <meta name="google-site-verification" content="GSC_VERIFICATION_TOKEN" />
+
+  <!-- Google Analytics 4 (gtag.js loads after the page has rendered; events queue in dataLayer until then) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+      document.head.appendChild(s);
+    });
+  </script>
+
+  <!-- Fonts: Zodiak (display) + Work Sans (body), loaded without blocking render -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=work-sans@300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=work-sans@300,400,500,600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=work-sans@300,400,500,600&display=swap" /></noscript>
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="preload" as="image" href="assets/images/hero-mountain-1920.webp" imagesrcset="assets/images/hero-mountain-720.webp 720w, assets/images/hero-mountain-960.webp 960w, assets/images/hero-mountain-1920.webp 1920w" imagesizes="100vw" />
 
-  <!-- Splitting.js for animated text -->
-  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
-  <script src="https://unpkg.com/splitting/dist/splitting.min.js" defer></script>
+  <!-- Self-hosted, pinned scripts -->
+  <script src="assets/js/splitting.min.js" defer></script>
+  <script src="assets/js/icons.js" defer></script>
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Structured Data for SEO -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://www.summittitlepartners.com/#organization",
     "name": "Summit Title Partners",
-    "description": "A private real estate solutions company helping California homeowners resolve delinquent taxes, liens, foreclosure, inherited property, and title problems.",
-    "url": "https://www.summittitlepartners.com",
-    "areaServed": {
-      "@type": "State",
-      "name": "California"
+    "legalName": "Summit Title Partners LLC",
+    "url": "https://www.summittitlepartners.com/",
+    "telephone": "+1-707-583-3304",
+    "email": "Patrick@summittitlepartners.com",
+    "description": "A private real estate solutions company that helps California homeowners with delinquent property taxes, inherited property, liens and judgments, and title problems. We investigate first and explain every realistic option.",
+    "image": "https://www.summittitlepartners.com/assets/images/hero-mountain-1920.webp",
+    "logo": "https://www.summittitlepartners.com/assets/images/logo-dark-blue.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sacramento",
+      "addressRegion": "CA",
+      "addressCountry": "US"
     },
-    "serviceType": ["Complex Property Solutions", "Foreclosure Options", "Curative Title", "Inherited Property Resolution"],
-    "priceRange": "Free Consultation",
+    "areaServed": [
+      { "@type": "State", "name": "California" },
+      { "@type": "AdministrativeArea", "name": "Sacramento County, California" },
+      { "@type": "AdministrativeArea", "name": "Sonoma County, California" }
+    ],
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Patrick Mahoney",
+        "jobTitle": "Co-Founder",
+        "email": "Patrick@summittitlepartners.com",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "California Real Estate License",
+          "name": "California DRE License 02209290",
+          "identifier": "02209290",
+          "recognizedBy": { "@type": "Organization", "name": "California Department of Real Estate" }
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Trenton Ebersole",
+        "jobTitle": "Co-Founder",
+        "email": "Trent@summittitlepartners.com"
+      }
+    ],
+    "knowsAbout": [
+      "Curative Title",
+      "Delinquent Property Tax Options",
+      "Inherited Property",
+      "Liens, Taxes and Judgments",
+      "Property Investigation",
+      "Flexible Solutions"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Curative Title", "serviceType": "Curative Title", "areaServed": { "@type": "State", "name": "California" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Delinquent Property Tax Options", "serviceType": "Delinquent Property Tax Options", "areaServed": { "@type": "State", "name": "California" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inherited Property", "serviceType": "Inherited Property", "areaServed": { "@type": "State", "name": "California" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Liens, Taxes and Judgments", "serviceType": "Liens, Taxes and Judgments", "areaServed": { "@type": "State", "name": "California" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Property Investigation", "serviceType": "Property Investigation", "areaServed": { "@type": "State", "name": "California" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Flexible Solutions", "serviceType": "Flexible Solutions", "areaServed": { "@type": "State", "name": "California" } } }
+      ]
+    },
+    "priceRange": "Free consultation",
     "openingHours": "Mo-Fr 08:00-18:00"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I have to sell my house?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Many of the situations we work on end without a sale. Depending on the property, the realistic paths may include a payment plan with the county, a tax relief loan, curing a title defect so you can refinance or stay, or a creative structure. We lay out every option, including the ones that do not involve us, and the decision is yours." }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you respond?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Within one business day. If a county deadline is close, say so in the form and we will prioritize it. We explain the real deadlines rather than manufacture urgency." }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you a title company or attorneys?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Summit Title Partners is a private real estate solutions company. We are not a law firm, title or escrow company, government agency, or nonprofit. We investigate, explain your options, and coordinate with licensed attorneys and title and escrow professionals when a path needs them. Patrick Mahoney is a licensed California real estate agent, DRE 02209290." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the consultation cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nothing. The conversation, the property investigation, and the written summary of your options are free, with no obligation. If a solution involves a real estate transaction we participate in, we may earn from that transaction, and we tell you so up front." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which parts of California do you serve?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Every California county. We are based in Sacramento and work with homeowners across the state, including Sacramento County and Sonoma County, the Bay Area, the Central Valley, the North Coast, and Southern California." }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after I submit the form?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Patrick or Trent reads it and contacts you within one business day. We start by listening to what happened and what you want. Then we investigate the property records: ownership, taxes, liens, judgments, heirs, and deadlines. You receive a plain-English written summary of what we found and your realistic options, usually within about a week." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help if the property is already on the county tax sale list?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Often, yes, but time matters. In California the right to redeem a tax-defaulted property generally runs until the close of business on the last business day before the tax sale. Up to that point, paths may include redemption, a tax relief loan, or a sale on a timeline that lets you keep your equity. Contact us as early as you can so there is time to investigate and act." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if there are multiple heirs?",
+        "acceptedAnswer": { "@type": "Answer", "text": "That is common, and it is something we work through regularly. We identify and reach every heir, research the order of intestate succession under the California Probate Code when there is no will, and coordinate probate or a small estate procedure where one is needed. Every heir's share and signature matters, and we help the family reach a decision together." }
+      }
+    ]
   }
   </script>
 </head>
 <body>
 
 <!-- Hidden SVG filters -->
-<svg width="0" height="0" style="position:absolute">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
@@ -61,20 +183,18 @@
 <!-- ======================== NAVIGATION ======================== -->
 <header class="nav" id="nav">
   <div class="nav__inner">
-    <!-- Logo placeholder -->
-    <a href="#" class="nav__logo" aria-label="Summit Title Partners home">
-      <img src="assets/images/logo-dark-blue.png" alt="Summit Title Partners" class="nav__logo-img" />
+    <a href="/" class="nav__logo" aria-label="Summit Title Partners home">
+      <img src="assets/images/logo-dark-blue-480.webp" alt="Summit Title Partners" class="nav__logo-img" width="480" height="320" />
     </a>
 
-    <!-- Desktop Nav -->
     <nav class="nav__links" aria-label="Main navigation">
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <a href="#services">Situations</a>
+      <a href="#process">How We Work</a>
+      <a href="#where">Where We Work</a>
       <a href="#about">About</a>
       <a href="#contact" class="nav__cta">Free Consultation</a>
     </nav>
 
-    <!-- Theme toggle + hamburger -->
     <div class="nav__controls">
       <button data-theme-toggle class="icon-btn" aria-label="Switch to dark mode">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -85,12 +205,13 @@
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
     <nav>
-      <a href="#services" class="mobile-menu__link">Services</a>
-      <a href="#process" class="mobile-menu__link">Process</a>
+      <a href="#services" class="mobile-menu__link">Situations</a>
+      <a href="#process" class="mobile-menu__link">How We Work</a>
+      <a href="#where" class="mobile-menu__link">Where We Work</a>
       <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#faq" class="mobile-menu__link">Common Questions</a>
       <a href="#contact" class="mobile-menu__link mobile-menu__cta">Free Consultation</a>
     </nav>
   </div>
@@ -99,27 +220,26 @@
 <!-- ======================== HERO ======================== -->
 <section class="hero" id="home">
   <div class="hero__bg">
-    <img src="assets/images/hero-mountain.png" alt="California mountain summit at golden hour" class="hero__img" />
+    <img src="assets/images/hero-mountain-1920.webp"
+         srcset="assets/images/hero-mountain-720.webp 720w, assets/images/hero-mountain-960.webp 960w, assets/images/hero-mountain-1920.webp 1920w"
+         sizes="100vw"
+         width="1920" height="1072"
+         fetchpriority="high"
+         alt="Sierra Nevada mountain summit above the clouds at golden hour" class="hero__img" />
     <div class="hero__overlay"></div>
   </div>
 
   <div class="hero__content">
-    <div class="hero__eyebrow fade-in-up">Summit Title Partners</div>
-    <h1 class="hero__headline hero__headline--tagline" data-splitting>
-      Where Complex Property<br>Situations Find Solutions
-    </h1>
-    <p class="hero__sub fade-in-up">
-      Delinquent taxes, liens, inherited property, clouded title —
-      often several at once. We take the time to understand your situation and
-      what you're trying to accomplish before recommending anything.
-    </p>
+    <p class="hero__eyebrow hero__eyebrow--tagline" data-splitting>Where Complex Property Situations Find Solutions</p>
+    <h1 class="hero__headline fade-in-up">Help for California Homeowners With Delinquent Taxes, Liens, Inherited Property, or Title Problems</h1>
+    <p class="hero__sub hero__sub--line fade-in-up">We are a private real estate solutions company, not a law firm or title company.</p>
+    <p class="hero__sub hero__sub--line fade-in-up">We investigate first and show you every option, including the ones that don't involve selling.</p>
     <div class="hero__actions fade-in-up">
       <a href="#contact" class="btn btn--primary">Free Consultation</a>
-      <a href="#services" class="btn btn--ghost">How We Help</a>
+      <a href="tel:+17075833304" class="btn btn--ghost">Call 707-583-3304</a>
     </div>
   </div>
 
-  <!-- Scroll indicator -->
   <div class="hero__scroll">
     <div class="hero__scroll-line"></div>
     <span>Scroll</span>
@@ -131,7 +251,7 @@
   <div class="container">
     <div class="trust-bar__items">
       <div class="trust-bar__item">
-        <span class="trust-bar__num">24 Hrs</span>
+        <span class="trust-bar__num">1 Business Day</span>
         <span class="trust-bar__label">Response Time</span>
       </div>
       <div class="trust-bar__divider"></div>
@@ -141,8 +261,8 @@
       </div>
       <div class="trust-bar__divider"></div>
       <div class="trust-bar__item">
-        <span class="trust-bar__num">California Based</span>
-        <span class="trust-bar__label">Nationwide Service</span>
+        <span class="trust-bar__num">All 58 Counties</span>
+        <span class="trust-bar__label">California</span>
       </div>
     </div>
   </div>
@@ -153,7 +273,7 @@
   <div class="container">
     <div class="section-header">
       <div class="section-label">What We Do</div>
-      <h2 class="section-title">We Solve What Others Walk Away From</h2>
+      <h2 class="section-title">Property Problems We Solve in California</h2>
       <p class="section-desc">
         Complex property situations require more than a quick offer. We investigate
         what's actually happening, identify the realistic options, and help you understand each one.
@@ -164,30 +284,13 @@
 
       <div class="service-card fade-in">
         <div class="service-card__icon">
-          <i data-lucide="scroll"></i>
-        </div>
-        <h3 class="service-card__title">Curative Title</h3>
-        <p class="service-card__desc">
-          We resolve clouds on title — tax liens, missing heirs, recording errors,
-          and chain-of-title breaks that prevent you from selling, refinancing,
-          or keeping your property.
-        </p>
-        <ul class="service-card__list">
-          <li><i data-lucide="check"></i> Tax lien analysis &amp; redemption</li>
-          <li><i data-lucide="check"></i> Chain of title correction</li>
-          <li><i data-lucide="check"></i> Recording error resolution</li>
-        </ul>
-      </div>
-
-      <div class="service-card fade-in">
-        <div class="service-card__icon">
           <i data-lucide="home"></i>
         </div>
-        <h3 class="service-card__title">Delinquent Property Tax Options</h3>
+        <h3 class="service-card__title"><a href="/behind-on-property-taxes-california/" class="service-card__link">Behind on Property Taxes</a></h3>
         <p class="service-card__desc">
-          If you're behind on payments or received a notice, we explain the
+          If you're behind on payments or received a notice from the county, we explain the
           actual deadlines and what they mean, then walk you through every
-          realistic path forward — including ones that don't involve selling.
+          realistic path forward, including ones that don't involve selling.
         </p>
         <ul class="service-card__list">
           <li><i data-lucide="check"></i> Understand your timeline &amp; deadlines</li>
@@ -200,7 +303,7 @@
         <div class="service-card__icon">
           <i data-lucide="file-text"></i>
         </div>
-        <h3 class="service-card__title">Inherited Property</h3>
+        <h3 class="service-card__title"><a href="/inherited-property-california/" class="service-card__link">Inherited a House</a></h3>
         <p class="service-card__desc">
           When an owner passes without proper probate, the property can be stuck.
           We work through heirship research, succession, and heir coordination
@@ -217,7 +320,7 @@
         <div class="service-card__icon">
           <i data-lucide="scale"></i>
         </div>
-        <h3 class="service-card__title">Liens, Taxes &amp; Judgments</h3>
+        <h3 class="service-card__title"><a href="/liens-and-judgments-california/" class="service-card__link">Liens, Taxes and Judgments</a></h3>
         <p class="service-card__desc">
           Years of delinquent property taxes, competing liens, or judgments can make a property
           feel impossible to deal with. We untangle the claims, negotiate where possible, and
@@ -232,26 +335,45 @@
 
       <div class="service-card fade-in">
         <div class="service-card__icon">
-          <i data-lucide="search"></i>
+          <i data-lucide="scroll"></i>
         </div>
-        <h3 class="service-card__title">Property Investigation</h3>
+        <h3 class="service-card__title"><a href="/title-problems-california/" class="service-card__link">Title Problems</a></h3>
         <p class="service-card__desc">
-          Before recommending anything, we investigate — ownership, value, mortgages, taxes,
-          liens, foreclosure status, heirs, code issues, and deadlines — so you understand
-          what is actually happening with your property.
+          We resolve clouds on title: tax liens, missing heirs, recording errors,
+          and chain-of-title breaks that prevent you from selling, refinancing,
+          or keeping your property.
         </p>
         <ul class="service-card__list">
-          <li><i data-lucide="check"></i> Full ownership &amp; title research</li>
-          <li><i data-lucide="check"></i> Lien, tax &amp; judgment discovery</li>
-          <li><i data-lucide="check"></i> Clear summary of what we found</li>
+          <li><i data-lucide="check"></i> Tax lien analysis &amp; redemption</li>
+          <li><i data-lucide="check"></i> Chain-of-title correction</li>
+          <li><i data-lucide="check"></i> Recording error resolution</li>
         </ul>
       </div>
 
       <div class="service-card fade-in">
         <div class="service-card__icon">
-          <i data-lucide="search-check"></i>
+          <i data-lucide="search"></i>
         </div>
-        <h3 class="service-card__title">Flexible Solutions</h3>
+        <h3 class="service-card__title"><a href="/property-investigation/" class="service-card__link">Not Sure What You Have</a></h3>
+        <div class="service-card__kicker">Property Investigation</div>
+        <p class="service-card__desc">
+          Before recommending anything, we investigate: ownership, value, mortgages, taxes,
+          liens, judgments, heirs, code issues, and deadlines, so you understand
+          what is actually happening with your property.
+        </p>
+        <ul class="service-card__list">
+          <li><i data-lucide="check"></i> Full ownership &amp; title research</li>
+          <li><i data-lucide="check"></i> Lien, tax &amp; judgment discovery</li>
+          <li><i data-lucide="check"></i> Clear written summary of what we found</li>
+        </ul>
+      </div>
+
+      <div class="service-card fade-in">
+        <div class="service-card__icon">
+          <i data-lucide="layers"></i>
+        </div>
+        <h3 class="service-card__title"><a href="/flexible-solutions/" class="service-card__link">More Than One Way Out</a></h3>
+        <div class="service-card__kicker">Flexible Solutions</div>
         <p class="service-card__desc">
           Not every situation calls for a sale. Depending on your needs, the path
           may involve keeping the property, curing the issue, selling with time
@@ -270,7 +392,7 @@
 
 <!-- ======================== FULL-BLEED IMAGE DIVIDER ======================== -->
 <section class="image-divider">
-  <img src="assets/images/documents-clarity.png" alt="Property deed documents on navy leather desk" class="image-divider__img" />
+  <img src="assets/images/documents-clarity.webp" width="1600" height="893" loading="lazy" alt="Property deed documents laid out on a navy leather desk" class="image-divider__img" />
   <div class="image-divider__overlay">
     <blockquote class="image-divider__quote">
       "Behind every property is a person. That's where we start."
@@ -283,14 +405,15 @@
   <div class="container">
     <div class="process__layout">
       <div class="process__left">
-        <div class="section-label">How We Work</div>
-        <h2 class="section-title section-title--compact">Understand First,<br>Recommend Second.</h2>
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title section-title--compact">How We Work</h2>
+        <p class="section-subtitle">Understand first, recommend second.</p>
         <p class="section-desc">
           We don't lead with an offer. We follow the same disciplined process
           on every situation, so you understand your options before you decide.
         </p>
         <div class="process__image-wrap">
-          <img src="assets/images/mountain-path.png" alt="Mountain trail leading to summit" class="process__image" />
+          <img src="assets/images/mountain-path.webp" width="1000" height="747" loading="lazy" alt="Mountain trail leading up toward a summit" class="process__image" />
         </div>
       </div>
 
@@ -306,7 +429,7 @@
           <div class="process__step-num">02</div>
           <div class="process__step-content">
             <h3>Investigate the Property</h3>
-            <p>We research what's actually happening — ownership, value, mortgages, taxes, liens, judgments, foreclosure status, title, heirs, and important deadlines. We investigate before we prescribe.</p>
+            <p>We research what's actually happening: ownership, value, mortgages, taxes, liens, judgments, title, heirs, and important deadlines. We investigate before we prescribe.</p>
           </div>
         </div>
         <div class="process__step fade-in">
@@ -320,7 +443,7 @@
           <div class="process__step-num">04</div>
           <div class="process__step-content">
             <h3>Execute</h3>
-            <p>Once you choose a path, we get it done — coordinating escrow, title, attorneys, lenders, heirs, and buyers as needed. Our reputation rests on doing what we said we would do.</p>
+            <p>Once you choose a path, we get it done, coordinating escrow, title, attorneys, lenders, heirs, and buyers as needed. Our reputation rests on doing what we said we would do.</p>
           </div>
         </div>
       </div>
@@ -331,7 +454,7 @@
 <!-- ======================== ABOUT ======================== -->
 <section class="about" id="about">
   <div class="about__bark-bg">
-    <img src="assets/images/mountain-rock.png" alt="" aria-hidden="true" class="about__bark-img" />
+    <img src="assets/images/mountain-rock.webp" width="1400" height="781" loading="lazy" alt="" aria-hidden="true" class="about__bark-img" />
     <div class="about__bark-overlay"></div>
   </div>
   <div class="container">
@@ -341,12 +464,12 @@
       <div class="about__body">
         <p>
           Summit Title Partners is a private real estate solutions company. We intentionally pursue
-          the situations other investors avoid — delinquent taxes, multiple liens, missing heirs,
-          foreclosure, clouded title, and often several at once — because that's where the ability
+          the situations other investors avoid: delinquent taxes, multiple liens, missing heirs,
+          clouded title, and often several at once, because that's where the ability
           to investigate, structure, and execute becomes valuable.
         </p>
         <p>
-          Like the mountain summit — steadfast, enduring, and above the clouds — we rise above
+          Like the mountain summit, steadfast, enduring, and above the clouds, we rise above
           the complexity. Our team brings years of experience in real estate investing, title research,
           and distressed property resolution to every situation we take on.
         </p>
@@ -366,16 +489,15 @@
   <div class="container">
     <div class="section-header">
       <div class="section-label">Our Team</div>
-      <h2 class="section-title">The People Behind Summit</h2>
+      <h2 class="section-title">Who You Will Be Talking To</h2>
       <p class="section-desc">
         Behind every property is a person. Behind Summit Title Partners are two.
-        Here's who you'll be talking to.
       </p>
     </div>
     <div class="team__grid">
       <div class="team-card fade-in">
         <div class="team-card__photo">
-          <img src="assets/images/team/patrick.png" alt="Patrick Mahoney" loading="lazy" />
+          <img src="assets/images/team/patrick.webp" width="560" height="560" alt="Patrick Mahoney, co-founder of Summit Title Partners" loading="lazy" />
         </div>
         <div class="team-card__body">
           <h3 class="team-card__name">Patrick Mahoney</h3>
@@ -398,7 +520,7 @@
       </div>
       <div class="team-card fade-in">
         <div class="team-card__photo">
-          <img src="assets/images/team/trent.png" alt="Trenton Ebersole" loading="lazy" />
+          <img src="assets/images/team/trent.webp" width="560" height="560" alt="Trenton Ebersole, co-founder of Summit Title Partners" loading="lazy" />
         </div>
         <div class="team-card__body">
           <h3 class="team-card__name">Trenton Ebersole</h3>
@@ -412,8 +534,6 @@
           </p>
           <div class="team-card__contact">
             <a href="mailto:Trent@summittitlepartners.com">Trent@summittitlepartners.com</a>
-            <span aria-hidden="true">·</span>
-            <a href="tel:+19168890461">916-889-0461</a>
           </div>
         </div>
       </div>
@@ -431,61 +551,96 @@
     <div class="why-us__grid">
       <div class="why-card fade-in">
         <div class="why-card__icon"><i data-lucide="clock"></i></div>
-        <h3>Under 24-Hour Response</h3>
-        <p>Your situation won't wait, and neither will we. Every inquiry gets a response within one business day — and we'll explain the real deadlines rather than manufacture urgency.</p>
+        <h3>Response Within One Business Day</h3>
+        <p>Your situation won't wait, and neither will we. Every inquiry gets a response within one business day, and we'll explain the real deadlines rather than manufacture urgency.</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-card__icon"><i data-lucide="handshake"></i></div>
         <h3>Start The Conversation</h3>
-        <p>No upfront cost, no obligation. We'll listen, look into your situation, explain your realistic options in plain English, and give you an honest assessment — even if the best answer isn't us.</p>
+        <p>No upfront cost, no obligation. We'll listen, look into your situation, explain your realistic options in plain English, and give you an honest assessment, even if the best answer isn't us.</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-card__icon"><i data-lucide="layers"></i></div>
         <h3>More Than One Answer</h3>
-        <p>We've built the ability to solve property problems in multiple ways — keep, stay, sell with time, protect equity, or exit — so we never force every situation into the same solution.</p>
+        <p>We've built the ability to solve property problems in multiple ways: keep, stay, sell with time, protect equity, or exit. We never force every situation into the same solution.</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-card__icon"><i data-lucide="map-pin"></i></div>
-        <h3>California Based, Nationwide Reach</h3>
-        <p>California is home, and it's where we know the records, county processes, and local rules best. But complex property situations don't stop at the state line, and neither do we. We bring the same experience to homeowners nationwide.</p>
+        <h3>We Know California Counties</h3>
+        <p>California is home. We know how county tax collectors, recorders, and probate courts actually work, from the deadlines on a tax-defaulted property to how a lien gets released, and we use that on every file.</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-card__icon"><i data-lucide="eye"></i></div>
         <h3>Transparent About Our Role</h3>
-        <p>We're a private real estate company, and we say so. If a solution involves a transaction we're part of, we'll explain exactly how we're involved — and if a better path doesn't include us, we'll tell you that too.</p>
+        <p>We're a private real estate company, and we say so. If a solution involves a transaction we're part of, we'll explain exactly how we're involved, and if a better path doesn't include us, we'll tell you that too.</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-card__icon"><i data-lucide="user-check"></i></div>
         <h3>You Make the Decision</h3>
-        <p>Our job is to bring clarity, not pressure. We'll lay out each option, what it means for you, and where the real risks are. Then the decision is yours — on your timeline, not ours.</p>
+        <p>Our job is to bring clarity, not pressure. We'll lay out each option, what it means for you, and where the real risks are. Then the decision is yours, on your timeline, not ours.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ======================== REVIEWS ======================== -->
-<section class="reviews" id="reviews">
+<!-- ======================== WHERE WE WORK ======================== -->
+<section class="where" id="where">
   <div class="container">
     <div class="section-header">
-      <div class="section-label">Testimonials</div>
-      <h2 class="section-title">What Homeowners Are Saying</h2>
+      <div class="section-label">Service Area</div>
+      <h2 class="section-title">Where We Work in California</h2>
+      <p class="section-desc">
+        We work with homeowners in every California county, and we are adding detailed county guides
+        as we go.
+      </p>
     </div>
-    <div class="reviews__grid reviews__grid--single">
-      <div class="review-card fade-in">
-        <div class="review-card__stars">
-          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-        </div>
-        <p class="review-card__text">
-          "Full testimonial coming soon."
-        </p>
-        <div class="review-card__author">
-          <div class="review-card__avatar">GM</div>
-          <div>
-            <div class="review-card__name">Gabriana M.</div>
-          </div>
-        </div>
-      </div>
+    <ul class="where__list">
+      <li class="where__item">Sacramento County</li>
+      <li class="where__item">Sonoma County</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================== FAQ ======================== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Answers</div>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary class="faq__q">Do I have to sell my house?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>No. Many of the situations we work on end without a sale. Depending on the property, the realistic paths may include a payment plan with the county, a tax relief loan, curing a title defect so you can refinance or stay, or a creative structure. We lay out every option, including the ones that do not involve us, and the decision is yours.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">How fast can you respond?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>Within one business day. If a county deadline is close, say so in the form and we will prioritize it. We explain the real deadlines rather than manufacture urgency.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Are you a title company or attorneys?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>No. Summit Title Partners is a private real estate solutions company. We are not a law firm, title or escrow company, government agency, or nonprofit. We investigate, explain your options, and coordinate with licensed attorneys and title and escrow professionals when a path needs them. Patrick Mahoney is a licensed California real estate agent, DRE 02209290.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">What does the consultation cost?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>Nothing. The conversation, the property investigation, and the written summary of your options are free, with no obligation. If a solution involves a real estate transaction we participate in, we may earn from that transaction, and we tell you so up front.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Which parts of California do you serve?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>Every California county. We are based in Sacramento and work with homeowners across the state, including Sacramento County and Sonoma County, the Bay Area, the Central Valley, the North Coast, and Southern California.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">What happens after I submit the form?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>Patrick or Trent reads it and contacts you within one business day. We start by listening to what happened and what you want. Then we investigate the property records: ownership, taxes, liens, judgments, heirs, and deadlines. You receive a plain-English written summary of what we found and your realistic options, usually within about a week.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Can you help if the property is already on the county tax sale list?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>Often, yes, but time matters. In California the right to redeem a tax-defaulted property generally runs until the close of business on the last business day before the tax sale. Up to that point, paths may include redemption, a tax relief loan, or a sale on a timeline that lets you keep your equity. Contact us as early as you can so there is time to investigate and act.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">What if there are multiple heirs?<i data-lucide="chevron-down"></i></summary>
+        <div class="faq__a"><p>That is common, and it is something we work through regularly. We identify and reach every heir, research the order of intestate succession under the California Probate Code when there is no will, and coordinate probate or a small estate procedure where one is needed. Every heir's share and signature matters, and we help the family reach a decision together.</p></div>
+      </details>
     </div>
   </div>
 </section>
@@ -496,62 +651,156 @@
     <div class="contact__layout">
       <div class="contact__left">
         <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Let's Talk About Your Situation</h2>
+        <h2 class="section-title">Tell Us About Your Property</h2>
         <p class="section-desc">
-          Tell us what's going on with the property — no matter how complicated.
+          Tell us what's going on with the property, no matter how complicated.
           We'll listen, look into it, and respond within one business day.
         </p>
         <div class="contact__info">
           <div class="contact__info-item">
-            <i data-lucide="mail"></i>
-            <span><a href="mailto:Patrick@summittitlepartners.com">Patrick@summittitlepartners.com</a> / <a href="tel:+17075833304">707-583-3304</a></span>
+            <i data-lucide="phone"></i>
+            <span><a href="tel:+17075833304">707-583-3304</a></span>
           </div>
           <div class="contact__info-item">
             <i data-lucide="mail"></i>
-            <span><a href="mailto:Trent@summittitlepartners.com">Trent@summittitlepartners.com</a> / <a href="tel:+19168890461">916-889-0461</a></span>
+            <span><a href="mailto:Patrick@summittitlepartners.com">Patrick@summittitlepartners.com</a></span>
+          </div>
+          <div class="contact__info-item">
+            <i data-lucide="mail"></i>
+            <span><a href="mailto:Trent@summittitlepartners.com">Trent@summittitlepartners.com</a></span>
           </div>
           <div class="contact__info-item">
             <i data-lucide="map-pin"></i>
-            <span>California Based, Nationwide Service</span>
+            <span>Sacramento, California. Serving every California county.</span>
           </div>
           <div class="contact__info-item">
             <i data-lucide="clock"></i>
-            <span>Response within 24 hours</span>
+            <span>Response within one business day</span>
           </div>
         </div>
       </div>
 
-      <form class="contact__form" id="contactForm" novalidate>
+      <form class="contact__form" id="contactForm" action="/api/lead" method="post" novalidate>
+        <input type="hidden" name="source" value="summittitlepartners.com homepage" />
         <div class="form-row">
           <div class="form-group">
             <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Jane Smith" required />
+            <input type="text" id="fullName" name="fullName" placeholder="Jane Smith" autocomplete="name" required />
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+            <input type="tel" id="phone" name="phone" placeholder="916-000-0000" autocomplete="tel" required />
           </div>
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" required />
         </div>
-        <div class="form-group address-group">
+        <div class="form-group">
           <label for="address">Property Address</label>
-          <input type="text" id="address" name="address" placeholder="Start typing an address..." required autocomplete="off" />
-          <div class="address-suggestions" id="addressSuggestions"></div>
+          <input type="text" id="address" name="address" placeholder="Street address, city" autocomplete="off" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="situation">What best describes the situation?</label>
+            <div class="select-wrap">
+              <select id="situation" name="situation" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Behind on property taxes</option>
+                <option>Inherited a property</option>
+                <option>Liens or judgments</option>
+                <option>Title problem</option>
+                <option>Not sure, need it investigated</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="county">County</label>
+            <div class="select-wrap">
+              <select id="county" name="county" required>
+                <option value="" disabled selected>Choose a county</option>
+                <option>Alameda County</option>
+                <option>Alpine County</option>
+                <option>Amador County</option>
+                <option>Butte County</option>
+                <option>Calaveras County</option>
+                <option>Colusa County</option>
+                <option>Contra Costa County</option>
+                <option>Del Norte County</option>
+                <option>El Dorado County</option>
+                <option>Fresno County</option>
+                <option>Glenn County</option>
+                <option>Humboldt County</option>
+                <option>Imperial County</option>
+                <option>Inyo County</option>
+                <option>Kern County</option>
+                <option>Kings County</option>
+                <option>Lake County</option>
+                <option>Lassen County</option>
+                <option>Los Angeles County</option>
+                <option>Madera County</option>
+                <option>Marin County</option>
+                <option>Mariposa County</option>
+                <option>Mendocino County</option>
+                <option>Merced County</option>
+                <option>Modoc County</option>
+                <option>Mono County</option>
+                <option>Monterey County</option>
+                <option>Napa County</option>
+                <option>Nevada County</option>
+                <option>Orange County</option>
+                <option>Placer County</option>
+                <option>Plumas County</option>
+                <option>Riverside County</option>
+                <option>Sacramento County</option>
+                <option>San Benito County</option>
+                <option>San Bernardino County</option>
+                <option>San Diego County</option>
+                <option>San Francisco County</option>
+                <option>San Joaquin County</option>
+                <option>San Luis Obispo County</option>
+                <option>San Mateo County</option>
+                <option>Santa Barbara County</option>
+                <option>Santa Clara County</option>
+                <option>Santa Cruz County</option>
+                <option>Shasta County</option>
+                <option>Sierra County</option>
+                <option>Siskiyou County</option>
+                <option>Solano County</option>
+                <option>Sonoma County</option>
+                <option>Stanislaus County</option>
+                <option>Sutter County</option>
+                <option>Tehama County</option>
+                <option>Trinity County</option>
+                <option>Tulare County</option>
+                <option>Tuolumne County</option>
+                <option>Ventura County</option>
+                <option>Yolo County</option>
+                <option>Yuba County</option>
+              </select>
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="message">Describe Your Situation</label>
           <textarea id="message" name="message" rows="4" placeholder="Briefly describe the property, what's happening, and what you'd ideally like to see happen..." required></textarea>
         </div>
+        <div class="form-group hp" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
         <button type="submit" class="btn btn--primary btn--full">
           <span class="btn__text">Send Message</span>
           <i data-lucide="arrow-right"></i>
         </button>
-        <div class="form-success" id="formSuccess" aria-live="polite">
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
           <i data-lucide="check-circle"></i>
-          <span>Thank you — we'll be in touch within one business day.</span>
+          <span>Thank you. We'll be in touch within one business day.</span>
+        </div>
+        <div class="form-error" id="formError" role="alert" aria-live="assertive">
+          <i data-lucide="alert-circle"></i>
+          <span>Something went wrong and your message was not sent. Please call <a href="tel:+17075833304">707-583-3304</a> or email <a href="mailto:Patrick@summittitlepartners.com">Patrick@summittitlepartners.com</a>.</span>
         </div>
       </form>
     </div>
@@ -563,29 +812,50 @@
   <div class="container">
     <div class="footer__layout">
       <div class="footer__brand">
-        <a href="#" class="footer__logo" aria-label="Summit Title Partners">
-          <img src="assets/images/logo-gold.png" alt="Summit Title Partners" class="footer__logo-img" />
+        <a href="/" class="footer__logo" aria-label="Summit Title Partners">
+          <img src="assets/images/logo-gold.webp" alt="Summit Title Partners" class="footer__logo-img" width="640" height="426" loading="lazy" />
         </a>
         <p class="footer__tagline">Where complex property situations find solutions.</p>
+        <p class="footer__contact">
+          <a href="tel:+17075833304">707-583-3304</a><br>
+          <a href="mailto:Patrick@summittitlepartners.com">Patrick@summittitlepartners.com</a><br>
+          Sacramento, California
+        </p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
         <div class="footer__col">
+          <span class="footer__col-heading">Situations</span>
+          <a href="/behind-on-property-taxes-california/">Behind on Property Taxes</a>
+          <a href="/inherited-property-california/">Inherited Property</a>
+          <a href="/liens-and-judgments-california/">Liens, Taxes and Judgments</a>
+          <a href="/title-problems-california/">Title Problems</a>
+          <a href="/property-investigation/">Property Investigation</a>
+          <a href="/flexible-solutions/">Flexible Solutions</a>
+        </div>
+        <div class="footer__col">
           <span class="footer__col-heading">Company</span>
           <a href="#about">About Us</a>
-          <a href="#process">Our Process</a>
+          <a href="#process">How We Work</a>
+          <a href="#faq">Common Questions</a>
           <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-heading">Where We Work</span>
+          <span class="footer__text">Sacramento County</span>
+          <span class="footer__text">Sonoma County</span>
+          <span class="footer__text">All California counties</span>
         </div>
       </nav>
     </div>
 
     <div class="footer__bottom">
-      <span>&copy; 2026 Summit Title Partners. All rights reserved.</span>
+      <span>&copy; 2026 Summit Title Partners LLC. All rights reserved. Patrick Mahoney, California DRE #02209290.</span>
       <span class="footer__legal">Summit Title Partners is a private real estate solutions company. We are not a law firm, title or escrow company, government agency, or nonprofit, and this website does not constitute legal advice. When a solution involves a real estate transaction in which we participate, we may earn from that transaction.</span>
     </div>
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 </body>
 </html>

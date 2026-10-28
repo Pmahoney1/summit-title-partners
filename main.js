@@ -1,8 +1,14 @@
 /* ============================================================
    SUMMIT TITLE PARTNERS — main.js
-   Handles: dark mode, nav scroll, mobile menu, splitting.js,
-   scroll animations, contact form, address autocomplete
+   Handles: dark mode, nav scroll, mobile menu, tagline reveal,
+   scroll animations, contact form (POST to form.action),
+   GA4 events (generate_lead, phone_click), icons
    ============================================================ */
+
+/* ---- ANALYTICS HELPER ---- */
+function stpTrack(name, params) {
+  if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+}
 
 /* ---- DARK MODE TOGGLE ---- */
 (function () {
@@ -54,6 +60,7 @@
     hamburger.classList.toggle('open', open);
     mobileMenu.classList.toggle('open', open);
     mobileMenu.setAttribute('aria-hidden', String(!open));
+    if (open) mobileMenu.removeAttribute('inert'); else mobileMenu.setAttribute('inert', '');
     hamburger.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
   }
@@ -72,14 +79,15 @@
   });
 })();
 
-/* ---- SPLITTING.JS HERO HEADLINE ---- */
+/* ---- TAGLINE CHARACTER REVEAL (Splitting.js, self-hosted) ----
+   Applied to the hero eyebrow tagline only. The H1 stays a single
+   text node so search engines read it as one heading. */
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof Splitting === 'function') {
-    const results = Splitting({ target: '.hero__headline', by: 'chars' });
-
+    const results = Splitting({ target: '.hero__eyebrow--tagline', by: 'chars' });
     results.forEach(result => {
       result.chars.forEach((char, i) => {
-        char.style.animationDelay = `${0.5 + i * 0.03}s`;
+        char.style.animationDelay = `${0.3 + i * 0.025}s`;
       });
     });
   }
@@ -110,64 +118,101 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.why-us__grid .why-card').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.1}s`;
   });
-  document.querySelectorAll('.reviews__grid .review-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.1}s`;
-  });
   document.querySelectorAll('.process__step').forEach((step, i) => {
     step.style.transitionDelay = `${i * 0.12}s`;
   });
 })();
 
-/* ---- CONTACT FORM ---- */
+/* ---- CONTACT FORM ----
+   POSTs JSON to form.action. Success is shown only after a 2xx
+   response; anything else shows the error state. */
 (function () {
   const form    = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
-  if (!form || !success) return;
+  const error   = document.getElementById('formError');
+  if (!form || !success || !error) return;
 
-  form.addEventListener('submit', (e) => {
+  const btn     = form.querySelector('button[type="submit"]');
+  const btnText = btn.querySelector('.btn__text');
+  const idleLabel = btnText.textContent;
+
+  function markInvalid(field) {
+    field.style.borderColor = '#c0392b';
+    field.addEventListener('input', () => { field.style.borderColor = ''; }, { once: true });
+    field.addEventListener('change', () => { field.style.borderColor = ''; }, { once: true });
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    const btn = form.querySelector('button[type="submit"]');
-    const btnText = btn.querySelector('.btn__text');
+    success.classList.remove('visible');
+    error.classList.remove('visible');
 
     let isValid = true;
+    let firstInvalid = null;
     form.querySelectorAll('[required]').forEach(field => {
-      if (!field.value.trim()) {
+      const empty = !field.value || !String(field.value).trim();
+      const badEmail = field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+      if (empty || badEmail) {
         isValid = false;
-        field.style.borderColor = '#c0392b';
-        field.addEventListener('input', () => {
-          field.style.borderColor = '';
-        }, { once: true });
+        markInvalid(field);
+        if (!firstInvalid) firstInvalid = field;
       }
     });
-    if (!isValid) return;
+    if (!isValid) { firstInvalid && firstInvalid.focus(); return; }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.page = window.location.href;
 
     btn.disabled = true;
     btnText.textContent = 'Sending…';
 
-    setTimeout(() => {
-      btn.disabled = false;
-      btnText.textContent = 'Send Message';
+    try {
+      const res = await fetch(form.getAttribute('action'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
       form.reset();
       success.classList.add('visible');
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-
-      setTimeout(() => success.classList.remove('visible'), 8000);
-    }, 1400);
+      stpTrack('generate_lead', {
+        situation: data.situation || '',
+        county: data.county || '',
+        form_id: form.id
+      });
+    } catch (err) {
+      error.classList.add('visible');
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = idleLabel;
+      if (window.lucide) window.lucide.createIcons();
+    }
   });
 })();
 
-/* ---- LUCIDE ICONS ---- */
+/* ---- PHONE CLICK TRACKING ---- */
+(function () {
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      stpTrack('phone_click', {
+        link_url: link.getAttribute('href'),
+        link_text: link.textContent.trim()
+      });
+    });
+  });
+})();
+
+/* ---- ICONS (self-hosted lucide subset) ---- */
 document.addEventListener('DOMContentLoaded', () => {
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
+  if (window.lucide) window.lucide.createIcons();
 });
 
 /* ---- ACTIVE NAV STATE ---- */
 (function () {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__links a');
+  if (!sections.length || !navLinks.length) return;
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
