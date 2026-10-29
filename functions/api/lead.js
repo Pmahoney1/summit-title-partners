@@ -6,7 +6,8 @@
  * environment variable on the Pages project (Production + Preview).
  */
 
-const REQUIRED = ['fullName', 'phone', 'email', 'address', 'situation', 'county', 'message'];
+// situation and county are optional: the homepage form does not ask for them.
+const REQUIRED = ['fullName', 'phone', 'email', 'address', 'message'];
 
 function json(body, status) {
   return new Response(JSON.stringify(body), {
@@ -40,8 +41,8 @@ export async function onRequestPost({ request, env }) {
     phone: String(data.phone).trim(),
     email: String(data.email).trim(),
     property_address: String(data.address).trim(),
-    situation: String(data.situation).trim(),
-    county: String(data.county).trim(),
+    situation: String(data.situation || '').trim(),
+    county: String(data.county || '').trim(),
     message: String(data.message).trim(),
     source: data.source || 'summittitlepartners.com',
     page: data.page || '',

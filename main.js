@@ -1,8 +1,8 @@
 /* ============================================================
    SUMMIT TITLE PARTNERS — main.js
-   Handles: dark mode, nav scroll, mobile menu, tagline reveal,
+   Handles: dark mode, nav scroll, mobile menu, splitting.js,
    scroll animations, contact form (POST to form.action),
-   GA4 events (generate_lead, phone_click), icons
+   GA4 events (generate_lead, phone_click), address autocomplete
    ============================================================ */
 
 /* ---- ANALYTICS HELPER ---- */
@@ -60,7 +60,6 @@ function stpTrack(name, params) {
     hamburger.classList.toggle('open', open);
     mobileMenu.classList.toggle('open', open);
     mobileMenu.setAttribute('aria-hidden', String(!open));
-    if (open) mobileMenu.removeAttribute('inert'); else mobileMenu.setAttribute('inert', '');
     hamburger.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
   }
@@ -79,15 +78,14 @@ function stpTrack(name, params) {
   });
 })();
 
-/* ---- TAGLINE CHARACTER REVEAL (Splitting.js, self-hosted) ----
-   Applied to the hero eyebrow tagline only. The H1 stays a single
-   text node so search engines read it as one heading. */
+/* ---- SPLITTING.JS HERO HEADLINE ---- */
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof Splitting === 'function') {
-    const results = Splitting({ target: '.hero__eyebrow--tagline', by: 'chars' });
+    const results = Splitting({ target: '.hero__headline', by: 'chars' });
+
     results.forEach(result => {
       result.chars.forEach((char, i) => {
-        char.style.animationDelay = `${0.3 + i * 0.025}s`;
+        char.style.animationDelay = `${0.5 + i * 0.03}s`;
       });
     });
   }
@@ -116,6 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.transitionDelay = `${i * 0.1}s`;
   });
   document.querySelectorAll('.why-us__grid .why-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+  document.querySelectorAll('.reviews__grid .review-card').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.1}s`;
   });
   document.querySelectorAll('.process__step').forEach((step, i) => {
@@ -203,16 +204,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
-/* ---- ICONS (self-hosted lucide subset) ---- */
+/* ---- LUCIDE ICONS ---- */
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.lucide) window.lucide.createIcons();
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 });
 
 /* ---- ACTIVE NAV STATE ---- */
 (function () {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__links a');
-  if (!sections.length || !navLinks.length) return;
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

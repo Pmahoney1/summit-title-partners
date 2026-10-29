@@ -12,6 +12,12 @@
   <link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=work-sans@300,400,500,600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=work-sans@300,400,500,600&display=swap" /></noscript>
   <link rel="stylesheet" href="/style.css" />
+  <style>
+    .notfound { padding-block: clamp(var(--space-24), 14vw, var(--space-32)); min-height: 60vh; }
+    .notfound .section-desc { margin-bottom: var(--space-6); }
+    .notfound__links { list-style: none; padding: 0; margin: 0 0 var(--space-8); display: flex; flex-direction: column; gap: var(--space-3); }
+    .notfound__links a { color: var(--color-primary); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+  </style>
 </head>
 <body>
 <header class="nav scrolled" id="nav">
@@ -20,9 +26,8 @@
       <img src="/assets/images/logo-dark-blue-480.webp" alt="Summit Title Partners" class="nav__logo-img" width="480" height="320" />
     </a>
     <nav class="nav__links" aria-label="Main navigation">
-      <a href="/#services">Situations</a>
-      <a href="/#process">How We Work</a>
-      <a href="/#where">Where We Work</a>
+      <a href="/#services">Services</a>
+      <a href="/#process">Process</a>
       <a href="/#about">About</a>
       <a href="/#contact" class="nav__cta">Free Consultation</a>
     </nav>
@@ -36,10 +41,6 @@
     <p class="section-desc">The address may be mistyped, or the page may have moved. Here is where you probably want to go.</p>
     <ul class="notfound__links">
       <li><a href="/">Home</a></li>
-      <li><a href="/behind-on-property-taxes-california/">Behind on property taxes in California</a></li>
-      <li><a href="/inherited-property-california/">Inherited a house in California</a></li>
-      <li><a href="/liens-and-judgments-california/">Liens, taxes and judgments</a></li>
-      <li><a href="/title-problems-california/">Title problems</a></li>
       <li><a href="/#contact">Free consultation</a></li>
     </ul>
     <p class="section-desc">Or call <a href="tel:+17075833304">707-583-3304</a>.</p>
@@ -49,7 +50,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__bottom">
-      <span>&copy; 2026 Summit Title Partners. All rights reserved.</span>
+      <span>&copy; 2026 Summit Title Partners LLC. All rights reserved.</span>
       <span class="footer__legal">Summit Title Partners is a private real estate solutions company. We are not a law firm, title or escrow company, government agency, or nonprofit, and this website does not constitute legal advice. When a solution involves a real estate transaction in which we participate, we may earn from that transaction.</span>
     </div>
   </div>
