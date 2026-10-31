@@ -1327,3 +1327,11 @@ a, button, [role='button'], input, textarea, select {
   .footer__legal { text-align: left; }
   .image-divider__quote { font-size: clamp(1.2rem, 4.5vw, 2rem); }
 }
+
+/* Make the whole service card clickable via the title link */
+.service-card__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
