@@ -1338,5 +1338,8 @@ a, button, [role='button'], input, textarea, select {
 
 /* Areas We Serve */
 .areas { padding-block: clamp(var(--space-16), 8vw, var(--space-32)); }
-.areas__list { list-style: none; padding: 0; margin: 0 0 var(--space-8); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); }
+.areas__list { list-style: none; padding: 0; margin: 0 auto var(--space-8); max-width: 960px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3) var(--space-6); }
+.areas__list a, .areas__more a { color: var(--color-primary); font-weight: 500; }
+.areas__list a:hover, .areas__more a:hover { text-decoration: underline; }
 .areas__more { text-align: center; }
+@media (max-width: 768px) { .areas__list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
